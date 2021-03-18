@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <h1>Exercício</h1>
+    <p>tempo</p>
+
+    <form id = "formulario">
+    <select id = "tempo">
+        <option value="" selected>Selecione</option>
+        <option value="ensolarado">ensolarado</option>
+        <option value="nublado">nublado</option>
+        <option value="chuvoso">chuvoso</option>
+        <option value="nevando">nevando</option>
+    </select>
+    <button>proximo</button>
+    </form>
+    <div id ="resultado"></div>
+
+    <script>
+        function onSubmit(event) {
+            event.preventDefault()
+
+            let msg = tempo.value
+            let clima
+            
+            //resultado.innerHTML = clima
+            if (msg == "ensolarado") {
+                clima ='<br/>O dia está ensolarado,faça atividades de lazer ou tome algo refrescante!'
+            } else if (msg == "nublado") {
+                clima = '<br/>Parece que o tempo mudou! pode chover a qualquer momento, não esqueça do guarda-chuva.'
+            } else if (msg == "chuvoso") {
+                clima = '<br/>Está chovendo, se proteja usando um guarda-chuva ou uma capa plastica. Tome cuidado ao andar nas ruas!'
+            } else if (msg == "nevando") {
+                clima = '<br/>Está nevando la fora! fique em casa e se agasalhe bem! Veja um filme legal e faça chocolate quente.'
+    }
+    resultado.innerHTML = clima
+}
+    formulario.addEventListener('submit',onSubmit)
+    </script>
+</body>
+</html>
