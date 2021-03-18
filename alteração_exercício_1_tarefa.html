@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício</title>
+</head>
+<body>
+    <h1>Exercício</h1>
+    <p>mensagem de boas vindas</p>
+
+    <form id = "formulario">
+        <input id = "nome" type = "text" placeholder="Informe seu nome">
+        
+        <select id = "genero1">
+        <option value="" selected>Qual seu gênero?</option>
+        <option value="f">feminino</option>
+        <option value="m">masculino</option>
+        </select>
+        <button>proximo</button>
+    </form>
+
+    <div id = "resultado"></div>
+
+    <script>
+        function onSubmit(event) {
+            event.preventDefault()
+
+            let name = nome.value
+            let genre = genero1.value
+            let msg
+
+       if(genre == "f"){
+        msg = `<br/>Seja Bem Vinda ${name}!`}
+         else if (genre = "m") {
+        msg = `<br/>Seja Bem Vindo ${name}!`
+       }
+       resultado.innerHTML = msg
+    }
+    formulario.addEventListener('submit',onSubmit)
+    </script>
+</body>
+</html>
