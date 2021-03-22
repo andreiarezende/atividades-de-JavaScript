@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programação em Microinformática</title>
+</head>
+<body>
+  <h1>Atividade</h1>
+  <p>Crie outra página onde o usuário informará um número.<br>
+     Após validar se é número mesmo, exiba a tabuada deste número</p>
+
+  <form id="form">
+    <input id="numero1" type="number" placeholder="Digite um numero">
+
+    <button>Exibir</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    function onSubmit(event) {
+      event.preventDefault()
+
+      let n1 = parseFloat(numero1.value)
+
+      
+      result.innerHTML =''
+
+      if(isNaN(n1)) {
+        result.innerHTML = 'por favor informe um número válido.<br/>'
+      } else if (!isNaN(n1)){
+          for (let x = 0; x <=10; x++) {
+        result.innerHTML += `${n1} x ${x} = ${n1*x}<br/>`
+
+      }
+      }
+
+    }
+
+    form.addEventListener('submit', onSubmit)
+  </script>
+</body>
+</html>
